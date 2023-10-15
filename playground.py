@@ -10,4 +10,7 @@ df = pd.read_csv("Dataset/dataset_1st/training.csv")
 label_df = df.groupby("label").count()
 # df.count()
 # %%
-plt.scatter()
+x = [str(i) for i in label_df.index]
+y = label_df["txkey"]
+plt.bar(x, y)
+# %%
