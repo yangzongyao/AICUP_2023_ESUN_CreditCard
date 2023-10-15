@@ -21,11 +21,11 @@ class Mongo:
             collection = client[self.db][table_name]
             data_pipe = collection.aggregate(pipe)
 
-        data = [data for data in data_pipe]
+            data = [data for data in data_pipe]
         df = pd.DataFrame(data)
         if not id:
             del df["_id"]
-
+            
         return df
     
     def dataframe2mongo(self, df, table_name) -> bool:
