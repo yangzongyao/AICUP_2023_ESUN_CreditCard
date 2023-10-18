@@ -15,12 +15,14 @@
 |Advanced_Public_Recall|Advanced_Public_Precision|score|
 |----|---|---|
 |0.924451|0.038346|0.073638|
+---
 ### log3: LabelEncoder + RandomForestClassifier
 - 放大訓練集(200k)
 
 |Advanced_Public_Recall|Advanced_Public_Precision|score|
 |----|---|---|
 |0.614011|0.167458|0.263148|
+---
 ### log4: LabelEncoder + RandomForestClassifier
 - 放大訓練集(450k)
 
