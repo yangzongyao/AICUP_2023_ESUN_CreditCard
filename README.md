@@ -40,3 +40,26 @@
 * [T-Brain](https://tbrain.trendmicro.com.tw/Competitions/Details/31)
 * [AI CUP-TEAM_4201](https://go.aicup.tw/competition/team/aa9d73cf-97aa-4be2-8775-7cbc68b11cf9/)
 
+## note
+
+loctm 當作刷卡時間，看能不能區分白天or晚上...等等
+csmam 可能要跟幣別掛在一起
+conam 可能可以完全取代 csmam
+
+insfg(是否分期) 跟 iterm(分期期數) 可以一起討論，也可以當作交乘項來試試看 
+
+
+0.45 => 盜刷資料切開留9：1，Training 30:1 的比例，val分數0.51， 遺失欄位補值(用類似的補)
+
+val 8:2 => 不要把2的再拆小，放全部下去測測看
+
+看那個國家的盜刷特別多，把那個國家獨立成一個類別
+
+
+## process note
+txkey 欄位為一個類別一筆資料
+locdt 授權日期平均分散
+loctm 為授權時間，按照時分秒排序，看能不能轉成早晚之類的類別使用
+
+chid : 01ec8ef3f97d04ad36a94e1bea5464bd45f8026a2fefef6cf6fbd660c3884f04
+交易間隔很短，幣值不為台幣，且扣除掉txkey後大量重複

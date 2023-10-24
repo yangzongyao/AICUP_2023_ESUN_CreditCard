@@ -6,3 +6,4 @@ def score(y_true, y_pred, label=''):
     f1 = f1_score(y_true, y_pred, average='micro')
     final_score = 2 * precision * recall / (precision + recall)
     print(label, 'recall:', round(recall, 4), ',precision:', round(precision, 4), ',F1 score:', round(final_score, 4))
+    return recall, precision, final_score
