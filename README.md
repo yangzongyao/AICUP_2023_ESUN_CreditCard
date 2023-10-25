@@ -63,3 +63,8 @@ loctm 為授權時間，按照時分秒排序，看能不能轉成早晚之類�
 
 chid : 01ec8ef3f97d04ad36a94e1bea5464bd45f8026a2fefef6cf6fbd660c3884f04
 交易間隔很短，幣值不為台幣，且扣除掉txkey後大量重複
+
+loctm 計算時間並轉換成類別
+stscd 狀態碼為1的留著，其餘更改為0
+chid encode為刷卡次數
+分析ecfg網路交易欄位
