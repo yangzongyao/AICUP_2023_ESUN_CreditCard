@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 from IPython.display import display
 import numpy as np
+from pathlib import Path
 
 with open('./Dataset/data.pkl', 'rb') as f:
     df = pickle.load(f)
@@ -17,20 +18,18 @@ def split_8_2():
 
     result = "./TrainingData_group"
 
-    fraud_df = training_set[training_set["label"]==1]
-    normal_df = training_set[training_set["label"]==0]
+    normal_df_shuffle = shuffle(training_set)
+    result_df = normal_df_shuffle.reset_index(drop=True)
 
-    normal_df_shuffle = shuffle(normal_df)
-    normal_df_shuffle = normal_df_shuffle.reset_index(drop=True)
-
-    n = 0
-    scope = fraud_df.shape[0]
-    for n in range(normal_df_shuffle.shape[0] // scope + 1):
-        temp_df = normal_df_shuffle.loc[scope*n: scope*(n+1), :]
-        result_df = pd.concat([temp_df, fraud_df])
-        result_df.to_csv(f"{result}/group_data{n}_stscd.csv", index=False)
-
+    Path(result).mkdir(exist_ok=True, parents=True)
+    result_df.to_csv(f"{result}/training_data.csv", index=False)
     general_test_set.to_csv(f"{result}/general_test_data.csv", index=False)
+    
+    with open(f"{result}/training_data.pkl", 'wb') as f:
+        pickle.dump(result_df, f)
+
+    with open(f"{result}/general_test_data.pkl", 'wb') as f:
+        pickle.dump(general_test_set, f)
 
 def split_simulation_distributed():
     # %%

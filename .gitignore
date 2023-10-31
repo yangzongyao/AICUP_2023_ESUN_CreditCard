@@ -6,3 +6,5 @@ __pycache__/
 TrainingData_group/
 submit*
 TrainData_simulation_distributed_group/
+*.pdf
+*.csv

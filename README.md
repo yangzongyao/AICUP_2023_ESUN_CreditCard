@@ -68,3 +68,27 @@ loctm 計算時間並轉換成類別
 stscd 狀態碼為1的留著，其餘更改為0
 chid encode為刷卡次數
 分析ecfg網路交易欄位
+
+
+應該把Test PUBLIC Train的LabelEncoding一起編
+
+
+log 5:
+
+
+
+note:
+
+loctm : 4、2小時各切一個比較
+再產白天、晚上的欄位
+
+匯率： 直接補匯率
+
+
+
+csmcu 和 csmam為null跟0 特定hcefg支付型態下有大量的1
+
+
+t t+1 時間欄位問題
+
+chid_fraud 欄位會有t 跟t+1的問題，maybe會影響val跟test的分數差異很大
